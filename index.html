@@ -10,31 +10,64 @@
       li{
          color: tomato;
       }
+      #fruits-title{
+         color: black;
+      }
    </style>
 </head>
 <body>
    <header>
       <h1>Welcome to my DOM</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, esse? <br> Aliquid consequatur temporibus laudantium exercitationem suscipit quaerat <br> porro quod voluptatum, quidem eius possimus eos qui numquam. Saepe voluptate ipsa maiores.</p>
    </header>
    <main>
-      <h1>My Awesome DOM de baba</h1>
+      <section>
+         <h1>My Awesome DOM de baba</h1>
       <ul>
          <li>Jalali set</li>
          <li>Shafayet</li>
          <li>bonobash</li>
+         <li>DOM dere baba</li>
       </ul>
+      </section>
+      <section>
+         <h1 id="fruits-title">Fruits I Like</h1>
+         <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>carrot</li>
+         </ul>
+      </section>
+      <section>
+         <h1 id="places-title">Places I like to visit</h1>
+         <ul>
+            <li>Sondorban</li>
+            <li>Bandorban</li>
+            <li>Kataban</li>
+            <li>Shalbon</li>
+         </ul>
+      </section>
    </main>
 
    <script src="js/dom.js"></script>
    <script>
-      const student = {
-         name : 'abul',
-         ID : 11,
-         study: function(time){
-            console.log(time, 'study kortece')
-         }
+      const liCollection = document.getElementsByTagName('li')
+      // console.log(liCollection)
+      for(const li of liCollection){
+         console.log(li.innerText);
       }
-      console.log('adding JS inside the html file')
+      const allHeadings = document.getElementsByTagName('h1')
+      for(const h1 of allHeadings){
+         console.log(h1.innerText);
+      }
+      // const student = {
+      //    name : 'abul',
+      //    ID : 11,
+      //    study: function(time){
+      //       console.log(time, 'study kortece')
+      //    }
+      // }
+      // console.log('adding JS inside the html file')
    </script>
 </body>
 </html>
