@@ -7,3 +7,10 @@ for(const section of sections){
    section.style.paddingLeft = '20px';
    section.style.backgroundColor = 'lightgray';
 }
+
+// const placesContainer = document.getElementById('places-container');
+// placesContainer.style.backgroundColor = 'yellow';
+
+const placesContainer = document.getElementById('places-container');
+placesContainer.classList.add('text-center');
+placesContainer.classList.remove('large-text');
