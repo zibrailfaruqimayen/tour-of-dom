@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,38 @@
    <title>Tour of DOM</title>
    <link rel="stylesheet" href="styles/style.css">
    <style>
-      li{
+      .fruits-container li {
          color: tomato;
       }
-      #fruits-title{
+
+      #fruits-title {
          color: black;
+      }
+
+      .important-places {
+         color: blueviolet;
       }
    </style>
 </head>
+
 <body>
    <header>
       <h1>Welcome to my DOM</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, esse? <br> Aliquid consequatur temporibus laudantium exercitationem suscipit quaerat <br> porro quod voluptatum, quidem eius possimus eos qui numquam. Saepe voluptate ipsa maiores.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, esse? <br> Aliquid consequatur temporibus
+         laudantium exercitationem suscipit quaerat <br> porro quod voluptatum, quidem eius possimus eos qui numquam.
+         Saepe voluptate ipsa maiores.</p>
    </header>
    <main>
       <section>
          <h1>My Awesome DOM de baba</h1>
-      <ul>
-         <li>Jalali set</li>
-         <li>Shafayet</li>
-         <li>bonobash</li>
-         <li>DOM dere baba</li>
-      </ul>
+         <ul>
+            <li>Jalali set</li>
+            <li>Shafayet</li>
+            <li>bonobash</li>
+            <li>DOM dere baba</li>
+         </ul>
       </section>
-      <section>
+      <section class="fruits-container">
          <h1 id="fruits-title">Fruits I Like</h1>
          <ul>
             <li>Apple</li>
@@ -41,10 +50,10 @@
       <section>
          <h1 id="places-title">Places I like to visit</h1>
          <ul>
-            <li>Sondorban</li>
-            <li>Bandorban</li>
-            <li>Kataban</li>
-            <li>Shalbon</li>
+            <li class="important-places">Sondorban</li>
+            <li class="important-places">Bandorban</li>
+            <li class="important-places">Kataban</li>
+            <li class="other-place">Shalbon</li>
          </ul>
       </section>
    </main>
@@ -53,13 +62,37 @@
    <script>
       const liCollection = document.getElementsByTagName('li')
       // console.log(liCollection)
-      for(const li of liCollection){
+      for (const li of liCollection) {
+         // console.log(li.innerText);
+      }
+
+      // option-1: getElementsByTagName
+      const allHeadings = document.getElementsByTagName('h1')
+      for (const h1 of allHeadings) {
+         // console.log(h1.innerText);
+      }
+
+
+      // option-2: getElementById
+      const fruitsTitle = document.getElementById('fruits-title')
+      fruitsTitle.innerText = 'Fruits changed by JS'
+       
+      // option-3: getElementsByClassName
+      const places = document.getElementsByClassName('important-places');
+      for (const place of places) {
+         console.log(place.innerText)
+      }
+
+      // option-4: querySelector
+      
+
+      // option-5: querySelectorAll
+      const someLi = document.querySelectorAll('.fruits-container li');
+      // console.log(someLi)
+      for (const li of someLi) {
          console.log(li.innerText);
       }
-      const allHeadings = document.getElementsByTagName('h1')
-      for(const h1 of allHeadings){
-         console.log(h1.innerText);
-      }
+
       // const student = {
       //    name : 'abul',
       //    ID : 11,
@@ -70,4 +103,5 @@
       // console.log('adding JS inside the html file')
    </script>
 </body>
+
 </html>
